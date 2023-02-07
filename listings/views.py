@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Listing 
 
 def index(request):
-    listings = Listing.objects.all()
+    listings = Listing.objects.order_by('-list_date').filter(is_published=True) # order by most recent comes first (descending order)
 
     paginator = Paginator(listings, 3)
     page = request.GET.get('page')
