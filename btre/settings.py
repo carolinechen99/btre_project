@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig', # add from pages app, cause django to recognize it as an app
     'listings.apps.ListingsConfig', # add from listings app, cause django to recognize it as an app
     'realtors.apps.RealtorsConfig', # add from realtors app, cause django to recognize it as an app
+    'account.apps.AccountConfig', # add from account app, cause django to recognize it as an app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,16 +77,28 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'btredb',
+#         'USER': 'postgres',
+#         'PASSWORD':'07887648844',
+#         'HOST': 'localhost'
+#     }
+
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'btredb',
+        'NAME': 'uber',
         'USER': 'postgres',
-        'PASSWORD':'07887648844',
+        'PASSWORD':'123456',
         'HOST': 'localhost'
     }
 
 }
+
 
 # DATABASES = {
 #     'default': {
@@ -143,3 +156,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
