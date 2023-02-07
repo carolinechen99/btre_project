@@ -67,6 +67,7 @@ def search(request):
         'state_choices': state_choices,
         'bedroom_choices': bedroom_choices,
         'price_choices': price_choices,
-        'listings': queryset_list
+        'listings': queryset_list,
+        'values': request.GET # this will keep the values in the search form after the search is done. 'values' is the name of the variable that will be used in the template 'search.html
     }
     return render(request, 'listings/search.html', context)
