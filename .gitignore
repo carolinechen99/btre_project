@@ -8,6 +8,7 @@ db.sqlite3-journal
 /media
 venv
 /static
+.vscode
 
 # Only root media & static not be pushed to the repository
 
